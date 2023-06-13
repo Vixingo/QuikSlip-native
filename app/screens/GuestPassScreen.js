@@ -12,26 +12,23 @@ import {
 function GuestPassScreen() {
     return (
         <>
-            <View>
+            <View style={{ flex: 1 }}>
                 <ImageBackground
                     style={styles.background}
                     source={require("../assets/images/complex_bg.png")}
                     resizeMode="cover"
                 >
-                    <Text>Inside</Text>
                     <Text
                         style={{
                             fontSize: 100,
                             fontWeight: 700,
                             color: "purple",
                         }}
-                    >
-                        Hello Promit
-                    </Text>
+                    ></Text>
                 </ImageBackground>
             </View>
             <Button
-                title="Send Message"
+                title="Send"
                 onPress={() => {
                     Alert.alert("I love you");
                 }}

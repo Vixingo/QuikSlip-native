@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, StyleSheet, Text, View, Alert } from "react-native";
+import {
+    Button,
+    StyleSheet,
+    Text,
+    View,
+    Alert,
+    ImageBackground,
+} from "react-native";
 
 function HomeScreen({ navigation }) {
     return (
@@ -14,6 +21,12 @@ function HomeScreen({ navigation }) {
                 title="Modify Pass"
                 onPress={() => {
                     navigation.navigate("Modify");
+                }}
+            />
+            <Button
+                title="Login as welcome"
+                onPress={() => {
+                    navigation.navigate("Login");
                 }}
             />
         </View>
