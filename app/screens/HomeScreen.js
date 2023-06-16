@@ -1,23 +1,45 @@
 import React from "react";
-import {
-    Button,
-    StyleSheet,
-    Text,
-    View,
-    Alert,
-    ImageBackground,
-} from "react-native";
+import { StyleSheet, Text, View, Alert, ImageBackground } from "react-native";
+import { Button } from "react-native-paper";
 
 function HomeScreen({ navigation }) {
     return (
-        <View>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "space-evenly",
+                paddingLeft: 20,
+                paddingRight: 20,
+            }}
+        >
             <Button
-                title="Get Guest Pass"
+                icon="camera"
+                mode="contained"
                 onPress={() => {
                     navigation.navigate("GuestPass");
                 }}
-            />
+            >
+                <Text> Guest Pass</Text>
+            </Button>
             <Button
+                icon="camera"
+                mode="contained"
+                onPress={() => {
+                    navigation.navigate("Modify");
+                }}
+            >
+                Modify Pass{" "}
+            </Button>
+            <Button
+                icon="camera"
+                mode="contained"
+                onPress={() => {
+                    navigation.navigate("Login");
+                }}
+            >
+                Login{" "}
+            </Button>
+            {/* <Button
                 title="Modify Pass"
                 onPress={() => {
                     navigation.navigate("Modify");
@@ -28,7 +50,7 @@ function HomeScreen({ navigation }) {
                 onPress={() => {
                     navigation.navigate("Login");
                 }}
-            />
+            /> */}
         </View>
     );
 }

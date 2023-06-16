@@ -1,6 +1,7 @@
 import { Image } from "expo-image";
 import React from "react";
-import { Button, StyleSheet, Text, View, Alert } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
+import { Button } from "react-native-paper";
 
 function ModifyScreen() {
     return (
@@ -8,6 +9,13 @@ function ModifyScreen() {
             <Text style={{ fontSize: 100, fontWeight: 700, color: "purple" }}>
                 Modify Screen
             </Text>
+            <Button
+                icon="camera"
+                mode="contained"
+                onPress={() => console.log("Pressed")}
+            >
+                Press me
+            </Button>
         </View>
     );
 }
