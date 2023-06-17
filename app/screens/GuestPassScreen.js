@@ -10,27 +10,29 @@ import {
     ScrollView,
 } from "react-native";
 
-import { TextInput, Text } from "react-native-paper";
+import { TextInput, Text, Button } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 
-import BackButton from "../components/BackButton";
+import BackButton from "../components/buttons/BackButton";
 import GuestReg from "../components/forms/GuestReg";
 import { myTheme } from "../utils/globalStyle.js";
-function GuestPassScreen() {
+function GuestPassScreen({ navigation }) {
     const [formdata, setFormdata] = React.useState({
         car: "",
         license: "",
         name: "",
         email: "",
+        check1: "",
+        check2: "",
     });
     return (
         <>
-            <TouchableWithoutFeedback
-                onPress={() => {
-                    Keyboard.dismiss();
-                }}
-            >
-                <ScrollView>
+            <ScrollView>
+                <TouchableWithoutFeedback
+                    onPress={() => {
+                        Keyboard.dismiss();
+                    }}
+                >
                     <View
                         style={{
                             flexDirection: "column",
@@ -87,13 +89,14 @@ function GuestPassScreen() {
                             <GuestReg
                                 formData={formdata}
                                 setFormData={setFormdata}
+                                navigation={navigation}
                             />
                         </View>
 
                         {/* <BackButton /> */}
                     </View>
-                </ScrollView>
-            </TouchableWithoutFeedback>
+                </TouchableWithoutFeedback>
+            </ScrollView>
         </>
     );
 }

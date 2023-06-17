@@ -10,16 +10,26 @@ import {
 } from "react-native-paper";
 import { globalStyles, myTheme } from "../../utils/globalStyle";
 import CustomTextInput from "./CustomTextInput";
+import CustomCheckBox from "./CustomCheckBox";
 
-const GuestReg = ({ formData, setFormData }) => {
+const GuestReg = ({ formData, setFormData, navigation }) => {
     const [text, setText] = React.useState("");
     const [focus, setFocus] = React.useState(false);
 
     const [checked, setChecked] = React.useState(false);
     return (
-        <View style={{ gap: 16, paddingLeft: 20, paddingRight: 20 }}>
+        <View
+            style={{
+                gap: 16,
+                paddingLeft: 20,
+                paddingRight: 20,
+                paddingBottom: 30,
+            }}
+        >
             <View>
-                <Text variant="headlineMedium">Guest Parking Pass</Text>
+                <Text variant="headlineMedium" style={{ fontWeight: 700 }}>
+                    Guest Parking Pass
+                </Text>
 
                 <View
                     style={{
@@ -32,6 +42,7 @@ const GuestReg = ({ formData, setFormData }) => {
                     <Chip
                         style={{
                             backgroundColor: "#CACACA",
+                            fontWeight: 400,
                         }}
                     >
                         See Rules
@@ -60,6 +71,10 @@ const GuestReg = ({ formData, setFormData }) => {
                     })
                 }
             />
+            <View style={{ flexDirection: "row" }}>
+                <Text style={globalStyles.h3}>Length of Stay</Text>
+                <Text style={globalStyles.chip}>1 Day</Text>
+            </View>
             <CustomTextInput
                 label="Name"
                 icon="rename-box"
@@ -82,41 +97,28 @@ const GuestReg = ({ formData, setFormData }) => {
                     })
                 }
             />
-            <View
-                style={{ flexDirection: "row", alignItems: "center", gap: 8 }}
-            >
-                <View
-                    style={{
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        width: 24,
-                        height: 24,
-                        borderColor: myTheme.color.primary,
-                        backgroundColor: myTheme.color.white,
-                    }}
-                >
-                    <IconButton
-                        icon={checked ? "check" : ""}
-                        iconColor={myTheme.color.primary}
-                        size={24}
-                        style={{
-                            position: "absolute",
-                            top: -15,
-                            left: -15,
-                        }}
-                        onPress={() => {
-                            setChecked(!checked);
-                        }}
-                    />
-                </View>
-                <Text style={{ fontSize: 16, color: myTheme.color.primary }}>
-                    I agree to receive a confirmation email
-                </Text>
-            </View>
+            <View></View>
+            <Text style={globalStyles.h3}>Communication Preference</Text>
+            <CustomCheckBox
+                label="I agree to receive a confirmation email"
+                icon={formData.check1 ? "check" : ""}
+                op={() => {
+                    setFormData({ ...formData, check1: !formData.check1 });
+                }}
+            />
+            <CustomCheckBox
+                label="I agree to receive a notification for an expiring guest pass"
+                icon={formData.check2 ? "check" : ""}
+                op={() => {
+                    setFormData({ ...formData, check2: !formData.check2 });
+                }}
+            />
             <Button
                 mode="contained"
+                style={{ borderRadius: 8 }}
                 onPress={() => {
                     console.log(formData);
+                    navigation.navigate("thankYou");
                 }}
             >
                 REGISTER VEHICLE

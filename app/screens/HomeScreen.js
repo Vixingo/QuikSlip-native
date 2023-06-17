@@ -13,32 +13,41 @@ function HomeScreen({ navigation }) {
             }}
         >
             <Button
-                icon="camera"
                 mode="contained"
                 onPress={() => {
-                    navigation.navigate("GuestPass");
+                    navigation.navigate("guestPass");
                 }}
             >
-                <Text> Guest Pass</Text>
+                <Text>Get Guest Pass</Text>
+            </Button>
+            <Button
+                mode="contained"
+                onPress={() => {
+                    navigation.navigate("thankYou");
+                }}
+            >
+                Thank You{" "}
             </Button>
             <Button
                 icon="camera"
                 mode="contained"
                 onPress={() => {
-                    navigation.navigate("Modify");
+                    navigation.navigate("modify");
                 }}
             >
                 Modify Pass{" "}
             </Button>
+
             <Button
                 icon="camera"
                 mode="contained"
                 onPress={() => {
-                    navigation.navigate("Login");
+                    navigation.navigate("login");
                 }}
             >
                 Login{" "}
             </Button>
+
             {/* <Button
                 title="Modify Pass"
                 onPress={() => {

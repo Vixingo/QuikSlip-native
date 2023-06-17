@@ -31,13 +31,15 @@ export default function App() {
     };
     const theme = {
         ...MD3LightTheme,
-
+        roundness: 8,
         colors: {
             ...MD3LightTheme.colors,
             primary: myTheme.color.primary,
             secondary: myTheme.color.secondary,
             onSurface: myTheme.color.onSurface,
             onSurfaceVariant: myTheme.color.primary,
+            outline: myTheme.color.outline,
+            onSurfaceDisabled: myTheme.color.white,
         },
         fonts: configureFonts({ config: fontConfig }),
     };
