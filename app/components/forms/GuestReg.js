@@ -11,6 +11,8 @@ import {
 import { globalStyles, myTheme } from "../../utils/globalStyle";
 import CustomTextInput from "./CustomTextInput";
 import CustomCheckBox from "./CustomCheckBox";
+import CSButton from "../buttons/CSButton";
+import CpButton from "../buttons/CpButton";
 
 const GuestReg = ({ formData, setFormData, navigation }) => {
     const [text, setText] = React.useState("");
@@ -39,14 +41,7 @@ const GuestReg = ({ formData, setFormData, navigation }) => {
                     }}
                 >
                     <Text>Obtain a digital permit pass.</Text>
-                    <Chip
-                        style={{
-                            backgroundColor: "#CACACA",
-                            fontWeight: 400,
-                        }}
-                    >
-                        See Rules
-                    </Chip>
+                    <Text style={globalStyles.chip2}>See Rules</Text>
                 </View>
             </View>
             <CustomTextInput
@@ -113,16 +108,14 @@ const GuestReg = ({ formData, setFormData, navigation }) => {
                     setFormData({ ...formData, check2: !formData.check2 });
                 }}
             />
-            <Button
+            <CpButton
                 mode="contained"
-                style={{ borderRadius: 8 }}
-                onPress={() => {
+                label={"REGISTER VEHICLE"}
+                op={() => {
                     console.log(formData);
                     navigation.navigate("thankYou");
                 }}
-            >
-                REGISTER VEHICLE
-            </Button>
+            />
         </View>
     );
 };

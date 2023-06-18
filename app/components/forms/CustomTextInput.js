@@ -9,6 +9,7 @@ const CustomTextInput = ({ label, icon, value, oct }) => {
             label={label}
             value={value}
             style={globalStyles.textinput}
+            textColor={myTheme.color.primary}
             mode="outlined"
             left={
                 <TextInput.Icon

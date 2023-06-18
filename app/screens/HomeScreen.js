@@ -1,52 +1,69 @@
 import React from "react";
 import { StyleSheet, Text, View, Alert, ImageBackground } from "react-native";
 import { Button } from "react-native-paper";
+import CpButton from "../components/buttons/CpButton";
 
 function HomeScreen({ navigation }) {
     return (
         <View
             style={{
                 flex: 1,
-                justifyContent: "space-evenly",
+                justifyContent: "flex-start",
+                gap: 4,
                 paddingLeft: 20,
                 paddingRight: 20,
             }}
         >
-            <Button
+            <CpButton
+                label={"2A,Guest Pass"}
                 mode="contained"
-                onPress={() => {
+                op={() => {
                     navigation.navigate("guestPass");
                 }}
-            >
-                <Text>Get Guest Pass</Text>
-            </Button>
-            <Button
+            />
+            <CpButton
+                label={"2B,Expired"}
                 mode="contained"
-                onPress={() => {
+                op={() => {
+                    navigation.navigate("expired");
+                }}
+            />
+            <CpButton
+                label={"2C,Tenant"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("tenant");
+                }}
+            />
+            <CpButton
+                label={"Thank You"}
+                mode="contained"
+                op={() => {
                     navigation.navigate("thankYou");
                 }}
-            >
-                Thank You{" "}
-            </Button>
-            <Button
-                icon="camera"
+            />
+            <CpButton
+                label={"Modify Pass"}
                 mode="contained"
-                onPress={() => {
+                op={() => {
                     navigation.navigate("modify");
                 }}
-            >
-                Modify Pass{" "}
-            </Button>
+            />
 
-            <Button
-                icon="camera"
+            <CpButton
+                label={"Login"}
                 mode="contained"
-                onPress={() => {
+                op={() => {
                     navigation.navigate("login");
                 }}
-            >
-                Login{" "}
-            </Button>
+            />
+            <CpButton
+                label={"Overview"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("overview");
+                }}
+            />
 
             {/* <Button
                 title="Modify Pass"

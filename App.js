@@ -1,6 +1,4 @@
 import * as React from "react";
-
-import { AppRegistry, View } from "react-native";
 import {
     PaperProvider,
     MD3LightTheme,
@@ -8,6 +6,7 @@ import {
     DefaultTheme,
 } from "react-native-paper";
 import StackNavigator from "./app/components/StackNavigator";
+
 import { useFonts } from "expo-font";
 import { myTheme } from "./app/utils/globalStyle";
 
@@ -20,6 +19,7 @@ export default function App() {
     } else {
         console.log("loaded");
     }
+
     const fontConfig = {
         customVariant: {
             fontFamily: Platform.select({

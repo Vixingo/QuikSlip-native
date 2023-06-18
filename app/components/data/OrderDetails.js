@@ -2,7 +2,7 @@ import { View } from "react-native";
 import React from "react";
 import { globalStyles, myTheme } from "../../utils/globalStyle";
 import { Button, Text } from "react-native-paper";
-import CustomButton from "../buttons/CustomButton";
+import CSButton from "../buttons/CSButton";
 
 const OrderDetails = () => {
     return (
@@ -72,7 +72,6 @@ const OrderDetails = () => {
                         QuikSlip, every pass obtained is a big deal to our
                         startup.
                     </Text>
-                    {/* <CustomButton /> */}
                     <Button
                         mode="contained"
                         style={[globalStyles.cbtn1]}
@@ -83,17 +82,13 @@ const OrderDetails = () => {
                     >
                         Download Receipt
                     </Button>
-                    <Button
-                        mode="outlined"
-                        buttonColor={myTheme.color.white}
-                        style={[globalStyles.cbtn2]}
-                        labelStyle={[globalStyles.h3, { lineHeight: 28 }]}
-                        onPress={() => {
+                    <CSButton
+                        mode={"outlined"}
+                        label={"Add to Wallet"}
+                        op={() => {
                             console.log("cbt2");
                         }}
-                    >
-                        Add to Wallet
-                    </Button>
+                    />
                 </View>
             </View>
         </View>

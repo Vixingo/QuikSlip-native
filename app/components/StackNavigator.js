@@ -25,6 +25,9 @@ import ThankScreen from "../screens/ThankScreen";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { globalStyles, myTheme } from "../utils/globalStyle";
 import BackButton from "../components/buttons/BackButton";
+import OverviewScreen from "../screens/OverviewScreen";
+import ExpiredScreen from "../screens/ExpiredScreen";
+import TenantScreen from "../screens/TenantScreen";
 
 function StackNavigator() {
     const Stack = createNativeStackNavigator();
@@ -40,7 +43,7 @@ function StackNavigator() {
                                 name="home"
                                 component={HomeScreen}
                                 options={{
-                                    title: "",
+                                    title: "Dashboard",
                                 }}
                             />
 
@@ -53,6 +56,16 @@ function StackNavigator() {
                                     headerLeft: () => <BackButton />,
                                 }}
                                 component={GuestPassScreen}
+                            />
+                            <Stack.Screen
+                                name="tenant"
+                                options={{
+                                    title: "",
+                                    headerTransparent: true,
+                                    headerBackTitleVisible: false,
+                                    headerLeft: () => <BackButton />,
+                                }}
+                                component={TenantScreen}
                             />
                             <Stack.Screen
                                 name="modify"
@@ -68,15 +81,34 @@ function StackNavigator() {
                                 name="thankYou"
                                 component={ThankScreen}
                                 options={{
+                                    // presentation: "fullScreenModal",
                                     headerTransparent: true,
                                     headerShown: false,
                                 }}
                             />
-                            {/* delete this login in production build */}
                             <Stack.Screen
-                                name="Login"
+                                name="overview"
+                                component={OverviewScreen}
                                 options={{
-                                    title: "Login",
+                                    title: "",
+                                    headerTransparent: true,
+                                    headerShadowVisible: false,
+                                    headerLeft: () => <BackButton />,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="expired"
+                                component={ExpiredScreen}
+                                options={{
+                                    headerTransparent: true,
+                                    headerShown: false,
+                                }}
+                            />
+                            {/* delete this login in final build */}
+                            <Stack.Screen
+                                name="login"
+                                options={{
+                                    title: "login",
                                     // headerTransparent: true,
                                     // headerShadowVisible: false,
                                 }}
@@ -85,9 +117,9 @@ function StackNavigator() {
                         </>
                     ) : (
                         <Stack.Screen
-                            name="Login"
+                            name="login"
                             options={{
-                                title: "Login",
+                                title: "login",
                                 // headerTransparent: true,
                                 // headerShadowVisible: false,
                             }}

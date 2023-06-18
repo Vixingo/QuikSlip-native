@@ -45,13 +45,39 @@ export const globalStyles = StyleSheet.create({
         overflow: "hidden",
         marginLeft: 16,
     },
+    chip2: {
+        backgroundColor: "#cacaca",
+        fontSize: 14,
+        fontWeight: 400,
+        padding: 4,
+        borderRadius: 8,
+        overflow: "hidden",
+    },
+    pill: {
+        // backgroundColor: "#186FE7",
+        fontSize: 14,
+        color: "#fff",
+        fontWeight: 400,
+        padding: 0,
+        margin: 0,
+        marginHorizontal: 2,
+        marginVertical: 2,
+        marginRight: 10,
+        // width: 156,
+    },
     cbtn1: {
         borderRadius: 8,
         minHeight: 48,
         marginBottom: 16,
         justifyContent: "center",
     },
-    cbtn2: {
+
+    csButton: {
+        borderRadius: 8,
+        minHeight: 48,
+        justifyContent: "center",
+    },
+    cpButton: {
         borderRadius: 8,
         minHeight: 48,
         justifyContent: "center",
