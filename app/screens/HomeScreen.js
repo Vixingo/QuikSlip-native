@@ -39,7 +39,7 @@ function HomeScreen({ navigation }) {
                 label={"Thank You"}
                 mode="contained"
                 op={() => {
-                    navigation.navigate("thankYou");
+                    navigation.navigate("thankYou", { being: "obtain" });
                 }}
             />
             <CpButton
@@ -62,6 +62,13 @@ function HomeScreen({ navigation }) {
                 mode="contained"
                 op={() => {
                     navigation.navigate("overview");
+                }}
+            />
+            <CpButton
+                label={"TNT Dash"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("tntDash");
                 }}
             />
 

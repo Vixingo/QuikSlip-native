@@ -28,6 +28,7 @@ import BackButton from "../components/buttons/BackButton";
 import OverviewScreen from "../screens/OverviewScreen";
 import ExpiredScreen from "../screens/ExpiredScreen";
 import TenantScreen from "../screens/TenantScreen";
+import TntDashScreen from "../screens/TntDashScreen";
 
 function StackNavigator() {
     const Stack = createNativeStackNavigator();
@@ -99,6 +100,14 @@ function StackNavigator() {
                             <Stack.Screen
                                 name="expired"
                                 component={ExpiredScreen}
+                                options={{
+                                    headerTransparent: true,
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="tntDash"
+                                component={TntDashScreen}
                                 options={{
                                     headerTransparent: true,
                                     headerShown: false,

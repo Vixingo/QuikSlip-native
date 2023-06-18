@@ -6,7 +6,7 @@ import { IconButton } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const ThanksTop = () => {
+const ThanksTop = ({ name, msg }) => {
     const navigation = useNavigation();
 
     return (
@@ -59,18 +59,18 @@ const ThanksTop = () => {
                             },
                         ]}
                     >
-                        Hi Eric Brown,
+                        Hi {name},
                     </Text>
                     <Text
                         style={[
                             globalStyles.h1,
                             {
                                 color: myTheme.color.white,
-                                maxWidth: 272,
+                                maxWidth: 300,
                             },
                         ]}
                     >
-                        Thank you for obtaining your visitor pass.
+                        Thank you for {msg}
                     </Text>
                 </View>
             </View>

@@ -142,8 +142,9 @@ const TenantReg = ({ tendata, setTendata }) => {
                 label={"REGISTER VEHICLE"}
                 mode={"contained"}
                 op={() => {
-                    navigation.navigate("thankYou");
-                    console.log("");
+                    navigation.navigate("thankYou", {
+                        being: "register",
+                    });
                 }}
             />
         </View>

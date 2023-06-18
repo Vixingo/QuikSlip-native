@@ -18,14 +18,33 @@ import OrderDetails from "../components/data/OrderDetails";
 import { Image } from "expo-image";
 import ThanksTop from "../components/Cards/ThanksTop";
 
-const ThankScreen = ({ navigation }) => {
-    const insets = useSafeAreaInsets();
+import ThanksBody from "../components/Cards/ThanksBody";
 
+const ThankScreen = ({ navigation, route }) => {
+    const insets = useSafeAreaInsets();
+    /* 2. Get the param */
+    const { being } = route.params;
+    console.log(route);
     return (
         <>
             <ScrollView>
-                <ThanksTop />
-                <OrderDetails />
+                {being === "register" ? (
+                    <>
+                        <ThanksTop
+                            name={"Eric Brown"}
+                            msg={"registering yourself and vehicle."}
+                        />
+                        <ThanksBody />
+                    </>
+                ) : (
+                    <>
+                        <ThanksTop
+                            name={"Eric Brown"}
+                            msg={"obtaining your visitor pass."}
+                        />
+                        <OrderDetails />
+                    </>
+                )}
             </ScrollView>
         </>
     );
