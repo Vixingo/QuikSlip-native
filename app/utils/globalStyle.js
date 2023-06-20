@@ -4,6 +4,7 @@ import { Platform, StyleSheet } from "react-native";
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "#f5f5f5",
         paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0,
     },
     pxWrap: {
@@ -33,6 +34,10 @@ export const globalStyles = StyleSheet.create({
         fontWeight: 700,
     },
     h6: { fontSize: 16, fontWeight: 400 },
+    h7: {
+        fontSize: 14,
+        fontWeight: 400,
+    },
     chip: {
         backgroundColor: "#186FE7",
         color: "#fff",
@@ -51,7 +56,29 @@ export const globalStyles = StyleSheet.create({
         fontWeight: 400,
         padding: 4,
         borderRadius: 8,
+        // marginTop: 10,
+        marginRight: 20,
         overflow: "hidden",
+    },
+    chip3: {
+        marginTop: -9,
+        backgroundColor: "#CACACA",
+        borderRadius: 8,
+    },
+    chipLabel: {
+        fontSize: 14,
+        fontWeight: 400,
+        marginHorizontal: 4,
+        marginVertical: 4,
+    },
+    Dialog: {
+        borderRadius: 8,
+        backgroundColor: "#fff",
+        marginHorizontal: 55,
+    },
+    DialogBtn: {
+        width: 80,
+        borderRadius: 8,
     },
     pill: {
         // backgroundColor: "#186FE7",
@@ -87,7 +114,7 @@ export const globalStyles = StyleSheet.create({
 export const myTheme = {
     color: {
         primary: "#186FE7",
-        secondary: "#ffcc33",
+        secondary: "#282828",
         tertiary: "#CACACA",
         white: "#ffffff",
         red: "#ff0000",

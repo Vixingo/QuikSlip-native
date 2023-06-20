@@ -36,6 +36,11 @@ const ThankScreen = ({ navigation, route }) => {
                         />
                         <ThanksBody />
                     </>
+                ) : being === "invite" ? (
+                    <>
+                        {/* <ThanksTop /> */}
+                        {/* <OrderDetails /> */}
+                    </>
                 ) : (
                     <>
                         <ThanksTop

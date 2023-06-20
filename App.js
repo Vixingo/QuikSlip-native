@@ -40,6 +40,8 @@ export default function App() {
             onSurfaceVariant: myTheme.color.primary,
             outline: myTheme.color.outline,
             onSurfaceDisabled: myTheme.color.white,
+            secondaryContainer: myTheme.color.white,
+            onSecondaryContainer: myTheme.color.primary,
         },
         fonts: configureFonts({ config: fontConfig }),
     };

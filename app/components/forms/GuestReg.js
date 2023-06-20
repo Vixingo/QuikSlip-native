@@ -112,8 +112,8 @@ const GuestReg = ({ formData, setFormData, navigation }) => {
                 mode="contained"
                 label={"REGISTER VEHICLE"}
                 op={() => {
-                    console.log(formData);
-                    navigation.navigate("thankYou");
+                    // console.log(formData);
+                    navigation.navigate("thankYou", { being: "obtain" });
                 }}
             />
         </View>
