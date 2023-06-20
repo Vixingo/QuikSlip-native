@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Alert, ImageBackground } from "react-native";
+import { StyleSheet, View, Alert, ImageBackground } from "react-native";
 import { Button } from "react-native-paper";
 import CpButton from "../components/buttons/CpButton";
 

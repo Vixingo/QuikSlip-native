@@ -6,6 +6,7 @@ export const globalStyles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#f5f5f5",
         paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0,
+        fontFamily: "Arimo",
     },
     pxWrap: {
         paddingLeft: 20,
@@ -20,35 +21,43 @@ export const globalStyles = StyleSheet.create({
         left: 20,
     },
 
-    textinput: { height: 40, borderRadius: 8 },
+    textinput: { height: 40, borderRadius: 8, fontFamily: "Arimo_400Regular" },
     h1: {
+        color: "#000000",
+        lineHeight: 36,
         fontSize: 32,
-        fontWeight: 700,
+        fontFamily: "Arimo_700Bold",
+        // fontWeight: 700,
     },
     h2: {
         fontSize: 24,
-        fontWeight: 700,
+        fontFamily: "Arimo_700Bold",
+        // fontWeight: 700,
+        // fontFamily: "Arimo",
     },
     h3: {
         fontSize: 20,
-        fontWeight: 700,
+        fontFamily: "Arimo_700Bold",
+        // fontWeight: 700,
     },
-    h6: { fontSize: 16, fontWeight: 400 },
+    h6: { fontSize: 16, fontFamily: "Arimo_400Regular" },
     h7: {
         fontSize: 14,
-        fontWeight: 400,
+        // fontWeight: 400,
+        fontFamily: "Arimo_400Regular",
     },
     chip: {
         backgroundColor: "#186FE7",
         color: "#fff",
         fontSize: 14,
-        fontWeight: 700,
+        // fontWeight: 700,
         padding: 4,
         paddingLeft: 8,
         paddingRight: 8,
         borderRadius: 8,
         overflow: "hidden",
         marginLeft: 16,
+        fontFamily: "Arimo_700Bold",
     },
     chip2: {
         backgroundColor: "#cacaca",
@@ -59,17 +68,19 @@ export const globalStyles = StyleSheet.create({
         // marginTop: 10,
         marginRight: 20,
         overflow: "hidden",
+        fontFamily: "Arimo_400Regular",
     },
     chip3: {
-        marginTop: -9,
+        marginTop: -8,
         backgroundColor: "#CACACA",
         borderRadius: 8,
     },
     chipLabel: {
         fontSize: 14,
-        fontWeight: 400,
+        // fontWeight: 400,
         marginHorizontal: 4,
         marginVertical: 4,
+        fontFamily: "Arimo_400Regular",
     },
     Dialog: {
         borderRadius: 8,
@@ -84,11 +95,12 @@ export const globalStyles = StyleSheet.create({
         // backgroundColor: "#186FE7",
         fontSize: 14,
         color: "#fff",
-        fontWeight: 400,
+        fontFamily: "Arimo_400Regular",
         padding: 0,
         margin: 0,
         marginHorizontal: 2,
         marginVertical: 2,
+
         marginRight: 10,
         // width: 156,
     },
@@ -102,6 +114,7 @@ export const globalStyles = StyleSheet.create({
     csButton: {
         borderRadius: 8,
         minHeight: 48,
+
         justifyContent: "center",
     },
     cpButton: {

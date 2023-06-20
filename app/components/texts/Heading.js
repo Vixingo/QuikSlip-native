@@ -3,7 +3,7 @@ import React from "react";
 import { globalStyles, myTheme } from "../../utils/globalStyle";
 
 import { ScrollView } from "react-native";
-import { Dialog, Portal, Text, Button } from "react-native-paper";
+import { Dialog, Portal, Button, Text } from "react-native-paper";
 const Heading = ({ title, subtitle, chip }) => {
     const [visible, setVisible] = React.useState(false);
 
@@ -12,23 +12,25 @@ const Heading = ({ title, subtitle, chip }) => {
     return (
         <View
             style={{
-                // flexDirection: "row",
                 alignItems: "flex-start",
-
+                // flexDirection: "row",
                 // justifyContent: "flex-start",
                 // flexWrap: "wrap",
             }}
         >
             <Text style={globalStyles.h2}>{title}</Text>
             <Text
-                style={{
-                    fontSize: 14,
-                    marginTop: 8,
-                    flexWrap: "wrap",
-                    alignItems: "center",
-                }}
+                style={[
+                    {
+                        fontSize: 14,
+                        marginTop: 8,
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                    },
+                    globalStyles.h7,
+                ]}
             >
-                {subtitle}
+                {subtitle + " "}
                 {!chip ? (
                     ""
                 ) : (

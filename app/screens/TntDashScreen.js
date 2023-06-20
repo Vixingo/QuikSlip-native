@@ -29,7 +29,6 @@ const TntDashScreen = () => {
                         label="Common Guest Profile"
                         icon={"human-greeting-variant"}
                         mode="contained"
-                        // color={"#343eef"}
                         op={() => {
                             navigation.navigate("commonGuest");
                         }}

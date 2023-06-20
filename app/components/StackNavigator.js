@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { IconButton, PaperProvider, Button } from "react-native-paper";
 import {
     StyleSheet,
-    Text,
     View,
     SafeAreaView,
     Platform,
@@ -39,12 +38,40 @@ import GuestScreen from "../screens/guest/GuestScreen";
 import AddGuestScreen from "../screens/guest/AddGuestScreen";
 import ModifyGuestScreen from "../screens/guest/ModifyGuestScreen";
 
+import * as SplashScreen from "expo-splash-screen";
+
+import {
+    useFonts,
+    Arimo_400Regular,
+    Arimo_500Medium,
+    Arimo_600SemiBold,
+    Arimo_700Bold,
+} from "@expo-google-fonts/arimo";
+
 function StackNavigator() {
+    SplashScreen.preventAutoHideAsync();
     const Stack = createNativeStackNavigator();
     const { user } = useAuth();
     // const navigation = useNavigation();
+    const [fontsLoaded] = useFonts({
+        Arimo: require("../assets/fonts/Arimo-Regular.ttf"),
+        Arimo_400Regular,
+        Arimo_500Medium,
+        Arimo_600SemiBold,
+        Arimo_700Bold,
+    });
+
+    const onLayoutRootView = React.useCallback(async () => {
+        if (fontsLoaded) {
+            await SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded]);
+
+    if (!fontsLoaded) {
+        return null;
+    }
     return (
-        <SafeAreaProvider>
+        <SafeAreaProvider onLayout={onLayoutRootView}>
             <NavigationContainer>
                 <Stack.Navigator>
                     {!user ? (
@@ -214,6 +241,20 @@ function StackNavigator() {
                             <Stack.Screen
                                 name="modifyGuest"
                                 component={ModifyGuestScreen}
+                                options={{
+                                    headerTitle: "",
+                                    headerTransparent: false,
+                                    headerShadowVisible: false,
+                                    headerStyle: {
+                                        backgroundColor: myTheme.color.back,
+                                    },
+                                    headerLeft: () => <BackButton />,
+                                    headerRight: () => <LogOut />,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="addGuest"
+                                component={AddGuestScreen}
                                 options={{
                                     headerTitle: "",
                                     headerTransparent: false,

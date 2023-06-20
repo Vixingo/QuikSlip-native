@@ -6,14 +6,25 @@ import {
     DefaultTheme,
 } from "react-native-paper";
 import StackNavigator from "./app/components/StackNavigator";
+import * as SplashScreen from "expo-splash-screen";
 
-import { useFonts } from "expo-font";
 import { myTheme } from "./app/utils/globalStyle";
-
+import {
+    useFonts,
+    Arimo_400Regular,
+    Arimo_500Medium,
+    Arimo_600SemiBold,
+    Arimo_700Bold,
+} from "@expo-google-fonts/arimo";
 export default function App() {
     const [fontsLoaded] = useFonts({
         Arimo: require("./app/assets/fonts/Arimo-Regular.ttf"),
+        Arimo_400Regular,
+        Arimo_500Medium,
+        Arimo_600SemiBold,
+        Arimo_700Bold,
     });
+
     if (!fontsLoaded) {
         console.log("not loaded");
     } else {
@@ -23,7 +34,7 @@ export default function App() {
     const fontConfig = {
         customVariant: {
             fontFamily: Platform.select({
-                web: 'Arimo, "Helvetica Neue", Helvetica, Arial, sans-serif',
+                web: "Arimo",
                 ios: "Arimo",
                 default: "Arimo",
             }),
