@@ -13,9 +13,9 @@ import {
     Text,
 } from "react-native-paper";
 import { globalStyles } from "../../utils/globalStyle";
-const ModifyGuestScreen = () => {
+const ModifyGuestScreen = ({ route }) => {
     const [visible, setVisible] = React.useState(false);
-
+    const { name } = route.params;
     const showDialog = () => setVisible(true);
 
     const hideDialog = () => setVisible(false);
@@ -28,7 +28,11 @@ const ModifyGuestScreen = () => {
                 }
             />
             <View style={{ gap: 40, marginTop: 24 }}>
-                <CustomTextInput label={"Name"} icon={"rename-box"} />
+                <CustomTextInput
+                    label={"Name"}
+                    icon={"rename-box"}
+                    value={name}
+                />
                 <CustomTextInput label={"Email"} icon={"email-outline"} />
                 <CpButton label={"SAVE CHANGES"} mode={"contained"} />
                 <Button

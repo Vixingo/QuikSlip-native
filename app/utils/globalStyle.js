@@ -71,7 +71,7 @@ export const globalStyles = StyleSheet.create({
         fontFamily: "Arimo_400Regular",
     },
     chip3: {
-        marginTop: -8,
+        marginTop: -9,
         backgroundColor: "#CACACA",
         borderRadius: 8,
     },

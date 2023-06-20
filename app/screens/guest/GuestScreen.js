@@ -9,6 +9,9 @@ import { useNavigation } from "@react-navigation/native";
 const GuestScreen = () => {
     const [modify, setModified] = useState(true);
     const navigation = useNavigation();
+
+    const [user, setUser] = useState("Thom Hunt");
+    const [user2, setUser2] = useState("Eric Brown");
     return (
         <ProfileLayout>
             <Heading2
@@ -19,17 +22,19 @@ const GuestScreen = () => {
             />
             <View style={{ gap: 16, marginTop: 16 }}>
                 <C2iconButton
-                    label="Eric Brown"
-                    icon={"star-outline"}
-                    mode={"outlined"}
-                    color={"#000000"}
-                />
-                <C2iconButton
-                    label="Thom Hunt"
+                    label={user2}
                     icon={"star-outline"}
                     mode={"outlined"}
                     op={() => {
-                        navigation.navigate("modifyGuest");
+                        navigation.navigate("modifyGuest", { name: user2 });
+                    }}
+                />
+                <C2iconButton
+                    label={user}
+                    icon={"star-outline"}
+                    mode={"outlined"}
+                    op={() => {
+                        navigation.navigate("modifyGuest", { name: user });
                     }}
                 />
                 {modify ? (
