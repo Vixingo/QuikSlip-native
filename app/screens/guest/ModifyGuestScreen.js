@@ -19,18 +19,13 @@ const ModifyGuestScreen = ({ route }) => {
     const navigation = useNavigation();
     const [save, setSave] = useState(false);
     const [visible, setVisible] = React.useState(false);
-    const { name } = route.params;
+    const { title, subtitle, name } = route.params;
     const showDialog = () => setVisible(true);
 
     const hideDialog = () => setVisible(false);
     return (
         <ProfileLayout>
-            <Heading2
-                title="Modify Guest Profile"
-                subtitle={
-                    "Need to update your guest email? Update all the information here."
-                }
-            />
+            <Heading2 title={title} subtitle={subtitle} />
             <View style={{ gap: 40, marginTop: 24 }}>
                 <CustomTextInput
                     label={"Name"}

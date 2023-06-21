@@ -35,6 +35,7 @@ const TntDashScreen = () => {
                                 title: "Guest Profiles",
                                 subtitle:
                                     "Here you find all the guest profiles you created for ease of access to obtain a parking pass.",
+                                add: "Guest",
                             });
                         }}
                     />
@@ -53,6 +54,7 @@ const TntDashScreen = () => {
                                 title: "Your Vehicles",
                                 subtitle:
                                     "All registered vehicles are located here to be edited or deleted from your account.",
+                                add: "Vehicle",
                             });
                         }}
                     />

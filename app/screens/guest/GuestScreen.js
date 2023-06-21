@@ -10,14 +10,22 @@ const GuestScreen = ({ route }) => {
     const [modify, setModified] = useState(true);
     const navigation = useNavigation();
 
-    const { show, title, subtitle } = route.params;
+    const { show, title, subtitle, add } = route.params;
+    // console.log(route);
     const user = [
         {
             name: "Thom Hunt",
             email: "tom@hu.com",
+
+            key: 1,
         },
-        { name: "Eric Brown", email: "tom@hu.com" },
+        { name: "Eric Brown", email: "tom@hu.com", key: 2 },
     ];
+    const cars = [
+        { model: "Honda Civic", plate: "Eric Brown", key: 3 },
+        { model: "Ford Focus", plate: "Silver ", key: 4 },
+    ];
+
     return (
         <ProfileLayout>
             <Heading2
@@ -25,14 +33,50 @@ const GuestScreen = ({ route }) => {
                 subtitle={subtitle}
             />
             <View style={{ gap: 16, marginTop: 16 }}>
-                {user.map((d) => {
-                    <Text>{d.name}</Text>;
-                })}
+                {show != "car"
+                    ? user.map((d) => {
+                          return (
+                              <C2iconButton
+                                  key={d.key}
+                                  label={d.name}
+                                  icon={"star-outline"}
+                                  mode={"outlined"}
+                                  op={() => {
+                                      navigation.navigate("modifyGuest", {
+                                          title: "Create Guest Profile",
+                                          subtitle:
+                                              "Need to update your guest email? Update all the information here.",
+                                          name: d.name,
+                                          email: d.email,
+                                      });
+                                  }}
+                              />
+                          );
+                      })
+                    : cars.map((c) => {
+                          return (
+                              <C2iconButton
+                                  key={c.key}
+                                  label={c.model}
+                                  icon={"car-sports"}
+                                  mode={"outlined"}
+                                  op={() => {
+                                      navigation.navigate("modifyGuest", {
+                                          title: "Modify Vehicle Info",
+                                          subtitle:
+                                              "Replaced your past license plate, updated your drivers licesne, new car insurance? Change it all here.",
+                                          model: c.model,
+                                          plate: c.plate,
+                                      });
+                                  }}
+                              />
+                          );
+                      })}
 
-                {modify ? (
+                {modify && show != "car" ? (
                     <C2iconButton
-                        label="Add Guest"
-                        icon={"account-plus"}
+                        label={"Add " + add}
+                        icon={show === "car" ? "car" : "account-plus"}
                         mode={"contained"}
                         op={() => {
                             navigation.navigate("addGuest");
@@ -44,7 +88,14 @@ const GuestScreen = ({ route }) => {
 
                 <Divider style={{ marginVertical: 8 }} />
                 {show == "car" ? (
-                    ""
+                    <C2iconButton
+                        label={"Add " + add}
+                        icon={show === "car" ? "car" : "account-plus"}
+                        mode={"contained"}
+                        op={() => {
+                            navigation.navigate("addGuest");
+                        }}
+                    />
                 ) : modify ? (
                     <C2iconButton
                         label="Modify Guest Profile"
