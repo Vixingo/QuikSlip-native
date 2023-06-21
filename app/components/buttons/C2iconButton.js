@@ -30,6 +30,13 @@ const C2iconButton = ({ label, icon, mode, op, color, right }) => {
                     borderColor: color ? color : myTheme.color.primary,
                 }}
                 mode={mode}
+                textColor={
+                    mode === "contained"
+                        ? myTheme.color.white
+                        : color
+                        ? color
+                        : myTheme.color.primary
+                }
                 buttonColor={
                     mode === "contained"
                         ? myTheme.color.primary

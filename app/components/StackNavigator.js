@@ -47,7 +47,6 @@ import {
     Arimo_600SemiBold,
     Arimo_700Bold,
 } from "@expo-google-fonts/arimo";
-
 function StackNavigator() {
     SplashScreen.preventAutoHideAsync();
     const Stack = createNativeStackNavigator();
@@ -104,16 +103,20 @@ function StackNavigator() {
                                 }}
                                 component={TenantScreen}
                             />
-                            <Stack.Screen
+                            {/* <Stack.Screen
                                 name="modify"
                                 options={{
                                     title: "",
-                                    headerTransparent: true,
+                                    // headerTransparent: true,
                                     headerShadowVisible: false,
+                                    headerStyle: {
+                                        backgroundColor: myTheme.color.back,
+                                    },
                                     headerLeft: () => <BackButton />,
+                                    headerRight: () => <LogOut />,
                                 }}
                                 component={ModifyScreen}
-                            />
+                            /> */}
                             <Stack.Screen
                                 name="thankYou"
                                 component={ThankScreen}

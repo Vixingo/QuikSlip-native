@@ -6,37 +6,29 @@ import Heading2 from "../../components/texts/Heading2";
 import C2iconButton from "../../components/buttons/C2iconButton";
 import { useNavigation } from "@react-navigation/native";
 
-const GuestScreen = () => {
+const GuestScreen = ({ route }) => {
     const [modify, setModified] = useState(true);
     const navigation = useNavigation();
 
-    const [user, setUser] = useState("Thom Hunt");
-    const [user2, setUser2] = useState("Eric Brown");
+    const { show, title, subtitle } = route.params;
+    const user = [
+        {
+            name: "Thom Hunt",
+            email: "tom@hu.com",
+        },
+        { name: "Eric Brown", email: "tom@hu.com" },
+    ];
     return (
         <ProfileLayout>
             <Heading2
-                title="Guest Profiles"
-                subtitle={
-                    "Here you find all the guest profiles you created for ease of access to obtain a parking pass."
-                }
+                title={modify ? title : "Modify " + title}
+                subtitle={subtitle}
             />
             <View style={{ gap: 16, marginTop: 16 }}>
-                <C2iconButton
-                    label={user2}
-                    icon={"star-outline"}
-                    mode={"outlined"}
-                    op={() => {
-                        navigation.navigate("modifyGuest", { name: user2 });
-                    }}
-                />
-                <C2iconButton
-                    label={user}
-                    icon={"star-outline"}
-                    mode={"outlined"}
-                    op={() => {
-                        navigation.navigate("modifyGuest", { name: user });
-                    }}
-                />
+                {user.map((d) => {
+                    <Text>{d.name}</Text>;
+                })}
+
                 {modify ? (
                     <C2iconButton
                         label="Add Guest"
@@ -49,8 +41,11 @@ const GuestScreen = () => {
                 ) : (
                     ""
                 )}
+
                 <Divider style={{ marginVertical: 8 }} />
-                {modify ? (
+                {show == "car" ? (
+                    ""
+                ) : modify ? (
                     <C2iconButton
                         label="Modify Guest Profile"
                         icon={"pencil"}

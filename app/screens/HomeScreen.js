@@ -36,19 +36,46 @@ function HomeScreen({ navigation }) {
                 }}
             />
             <CpButton
-                label={"Thank You"}
+                label={"3,Tenant Dashboard"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("tntDash");
+                }}
+            />
+            <CpButton
+                label={"4,Modify/Add Guest"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("commonGuest", {
+                        show: "guest",
+                        title: "Guest",
+                    });
+                }}
+            />
+            <CpButton
+                label={"5,Modify/Add Car"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("commonGuest", {
+                        show: "car",
+                        title: "car",
+                    });
+                }}
+            />
+            <CpButton
+                label={"Thank You obtain"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("thankYou", { being: "obtain" });
                 }}
             />
-            <CpButton
+            {/* <CpButton
                 label={"Modify Pass"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("modify");
                 }}
-            />
+            /> */}
 
             <CpButton
                 label={"Login"}
@@ -62,13 +89,6 @@ function HomeScreen({ navigation }) {
                 mode="contained"
                 op={() => {
                     navigation.navigate("overview");
-                }}
-            />
-            <CpButton
-                label={"TNT Dash"}
-                mode="contained"
-                op={() => {
-                    navigation.navigate("tntDash");
                 }}
             />
 

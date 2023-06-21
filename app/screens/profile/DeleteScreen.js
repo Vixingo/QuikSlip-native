@@ -7,6 +7,7 @@ import CpButton from "../../components/buttons/CpButton";
 import { Button, Text } from "react-native-paper";
 import { globalStyles } from "../../utils/globalStyle";
 import { useNavigation } from "@react-navigation/native";
+import TextButton from "../../components/buttons/TextButton";
 
 const DeleteScreen = () => {
     const navigation = useNavigation();
@@ -63,20 +64,13 @@ const DeleteScreen = () => {
                     navigation.popToTop();
                 }}
             />
-            <Button
-                style={{ marginTop: 16 }}
-                textColor="#969696"
-                labelStyle={{
-                    textDecorationLine: "underline",
-                    fontSize: 16,
-                    fontWeight: 700,
-                }}
-                onPress={() => {
+            <TextButton
+                label={"Skip"}
+                op={() => {
                     navigation.goBack();
                 }}
-            >
-                Skip
-            </Button>
+                textColor={"#969696"}
+            />
         </ProfileLayout>
     );
 };

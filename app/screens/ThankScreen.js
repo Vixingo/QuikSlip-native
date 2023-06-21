@@ -19,12 +19,13 @@ import { Image } from "expo-image";
 import ThanksTop from "../components/Cards/ThanksTop";
 
 import ThanksBody from "../components/Cards/ThanksBody";
+import InviteBody from "../components/Cards/InviteBody";
 
 const ThankScreen = ({ navigation, route }) => {
     const insets = useSafeAreaInsets();
     /* 2. Get the param */
-    const { being } = route.params;
-    console.log(route);
+    const { being, name, email } = route.params;
+    console.log(being);
     return (
         <>
             <ScrollView>
@@ -38,8 +39,8 @@ const ThankScreen = ({ navigation, route }) => {
                     </>
                 ) : being === "invite" ? (
                     <>
-                        {/* <ThanksTop /> */}
-                        {/* <OrderDetails /> */}
+                        <ThanksTop being={"invite"} />
+                        <InviteBody name={name} email={email} />
                     </>
                 ) : (
                     <>

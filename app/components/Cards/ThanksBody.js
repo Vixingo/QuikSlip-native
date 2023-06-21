@@ -1,9 +1,10 @@
-import { View, Text, LogBox } from "react-native";
+import { View, LogBox } from "react-native";
 import React from "react";
 import { globalStyles, myTheme } from "../../utils/globalStyle";
 import { Image } from "expo-image";
 import CpButton from "../buttons/CpButton";
 import { useNavigation } from "@react-navigation/native";
+import { Text } from "react-native-paper";
 
 const ThanksBody = () => {
     const navigation = useNavigation();
@@ -17,22 +18,19 @@ const ThanksBody = () => {
             }}
         >
             <View style={globalStyles.pxWrap}>
-                <Text
-                    style={{
-                        fontSize: 16,
-                        fontWeight: 400,
-                    }}
-                >
+                <Text style={globalStyles.h6}>
                     We’re sending an email to confirm the creation of your
                     account. It serves as a record of your account. Please keep
                     it!
                 </Text>
                 <Text
-                    style={{
-                        marginTop: 16,
-                        marginBottom: 32,
-                        fontSize: 16,
-                    }}
+                    style={[
+                        {
+                            marginTop: 16,
+                            marginBottom: 32,
+                        },
+                        globalStyles.h6,
+                    ]}
                 >
                     Thanks again!
                 </Text>

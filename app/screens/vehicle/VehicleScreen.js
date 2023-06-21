@@ -9,14 +9,11 @@ const VehicleScreen = () => {
     return (
         <ProfileLayout>
             <Heading2
-                title="Guest Profiles"
+                title="Your Vehicles"
                 subtitle={
-                    "Here you find all the guest profiles you created for ease of access to obtain a parking pass."
+                    "All registered vehicles are located here to be edited or deleted from your account."
                 }
             />
-
-            <C2iconButton label="Eric Brown" icon={"star-outline"} />
-            <C2iconButton label="Eric Brown" icon={"star-outline"} />
         </ProfileLayout>
     );
 };

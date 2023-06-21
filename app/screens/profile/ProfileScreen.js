@@ -5,21 +5,22 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Heading2 from "../../components/texts/Heading2";
 import C2iconButton from "../../components/buttons/C2iconButton";
 import { useNavigation } from "@react-navigation/native";
+import ProfileLayout from "../../components/layouts/ProfileLayout";
 
 const ProfileScreen = () => {
     const navigation = useNavigation();
     return (
-        <View style={globalStyles.container}>
-            <View style={[globalStyles.pxWrap, { marginBottom: 16 }]}>
-                <Heading2
-                    title="Account Settings"
-                    subtitle={
-                        "Where you can modify and edit anything associated with your account."
-                    }
-                />
-            </View>
-            <View style={{ gap: 16 }}>
+        <ProfileLayout>
+            <Heading2
+                title="Account Settings"
+                subtitle={
+                    "Where you can modify and edit anything associated with your account."
+                }
+            />
+
+            <View style={{ gap: 16, marginTop: 16 }}>
                 <C2iconButton
+                    mode={"outlined"}
                     label={"Personal Information"}
                     icon={"account-edit"}
                     op={() => {
@@ -27,6 +28,7 @@ const ProfileScreen = () => {
                     }}
                 />
                 <C2iconButton
+                    mode={"outlined"}
                     label={"Change Password"}
                     icon={"lock"}
                     op={() => {
@@ -34,6 +36,7 @@ const ProfileScreen = () => {
                     }}
                 />
                 <C2iconButton
+                    mode={"outlined"}
                     label={"Delete Account"}
                     icon={"trash-can"}
                     op={() => {
@@ -41,7 +44,7 @@ const ProfileScreen = () => {
                     }}
                 />
             </View>
-        </View>
+        </ProfileLayout>
     );
 };
 

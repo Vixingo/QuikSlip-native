@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import ProfileLayout from "../../components/layouts/ProfileLayout";
 import Heading2 from "../../components/texts/Heading2";
 import CustomTextInput from "../../components/forms/CustomTextInput";
@@ -13,7 +13,11 @@ import {
     Text,
 } from "react-native-paper";
 import { globalStyles } from "../../utils/globalStyle";
+import TextButton from "../../components/buttons/TextButton";
+import { useNavigation } from "@react-navigation/native";
 const ModifyGuestScreen = ({ route }) => {
+    const navigation = useNavigation();
+    const [save, setSave] = useState(false);
     const [visible, setVisible] = React.useState(false);
     const { name } = route.params;
     const showDialog = () => setVisible(true);
@@ -33,19 +37,27 @@ const ModifyGuestScreen = ({ route }) => {
                     icon={"rename-box"}
                     value={name}
                 />
-                <CustomTextInput label={"Email"} icon={"email-outline"} />
-                <CpButton label={"SAVE CHANGES"} mode={"contained"} />
-                <Button
-                    labelStyle={{
-                        fontSize: 16,
-                        fontWeight: 700,
-                        textDecorationLine: "underline",
+                <CustomTextInput
+                    label={"Email"}
+                    icon={"email-outline"}
+                    oct={() => {
+                        setSave(true);
                     }}
-                    onPress={showDialog}
-                >
-                    Delete Guest Profile
-                </Button>
-
+                />
+                <View>
+                    <CpButton
+                        label={"SAVE CHANGES"}
+                        mode={"contained"}
+                        disabled={!save}
+                        op={() => {
+                            navigation.goBack();
+                        }}
+                    />
+                    <TextButton
+                        label={"Delete Guest Profile"}
+                        op={showDialog}
+                    />
+                </View>
                 <Portal>
                     <Dialog
                         visible={visible}
@@ -68,7 +80,6 @@ const ModifyGuestScreen = ({ route }) => {
                                     globalStyles.h7,
                                     {
                                         textAlign: "center",
-
                                         alignSelf: "center",
                                     },
                                 ]}

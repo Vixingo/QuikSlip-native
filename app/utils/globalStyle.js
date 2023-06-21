@@ -40,6 +40,7 @@ export const globalStyles = StyleSheet.create({
         fontFamily: "Arimo_700Bold",
         // fontWeight: 700,
     },
+    h5: { fontSize: 16, fontFamily: "Arimo_700Bold" },
     h6: { fontSize: 16, fontFamily: "Arimo_400Regular" },
     h7: {
         fontSize: 14,
@@ -114,7 +115,6 @@ export const globalStyles = StyleSheet.create({
     csButton: {
         borderRadius: 8,
         minHeight: 48,
-
         justifyContent: "center",
     },
     cpButton: {

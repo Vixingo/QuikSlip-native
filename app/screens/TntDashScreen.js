@@ -30,7 +30,12 @@ const TntDashScreen = () => {
                         icon={"human-greeting-variant"}
                         mode="contained"
                         op={() => {
-                            navigation.navigate("commonGuest");
+                            navigation.navigate("commonGuest", {
+                                show: "guest",
+                                title: "Guest Profiles",
+                                subtitle:
+                                    "Here you find all the guest profiles you created for ease of access to obtain a parking pass.",
+                            });
                         }}
                     />
 
@@ -43,7 +48,12 @@ const TntDashScreen = () => {
                         icon={"car"}
                         mode="outlined"
                         op={() => {
-                            navigation.navigate("userVehicle");
+                            navigation.navigate("commonGuest", {
+                                show: "car",
+                                title: "Your Vehicles",
+                                subtitle:
+                                    "All registered vehicles are located here to be edited or deleted from your account.",
+                            });
                         }}
                     />
                     <Heading
