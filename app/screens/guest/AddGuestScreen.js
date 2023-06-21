@@ -6,7 +6,7 @@ import CustomTextInput from "../../components/forms/CustomTextInput";
 import CpButton from "../../components/buttons/CpButton";
 import { useNavigation } from "@react-navigation/native";
 
-const AddGuestScreen = () => {
+const AddGuestScreen = ({ route }) => {
     const navigation = useNavigation();
     const [guest, setGuest] = useState({ name: "", email: "" });
     const [empty, setEmpty] = useState(true);

@@ -79,7 +79,7 @@ function StackNavigator() {
                                 name="home"
                                 component={HomeScreen}
                                 options={{
-                                    title: "Dashboard",
+                                    title: "Dev Dashboard",
                                 }}
                             />
 

@@ -47,6 +47,11 @@ export const globalStyles = StyleSheet.create({
         // fontWeight: 400,
         fontFamily: "Arimo_400Regular",
     },
+    h8: {
+        color: "#8A8A8A",
+        fontSize: 12,
+        fontFamily: "Arimo_400Regular",
+    },
     chip: {
         backgroundColor: "#186FE7",
         color: "#fff",

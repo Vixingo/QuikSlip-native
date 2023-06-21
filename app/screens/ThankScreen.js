@@ -20,16 +20,17 @@ import ThanksTop from "../components/Cards/ThanksTop";
 
 import ThanksBody from "../components/Cards/ThanksBody";
 import InviteBody from "../components/Cards/InviteBody";
+import DeleteTop from "../components/Cards/DeleteTop";
 
 const ThankScreen = ({ navigation, route }) => {
     const insets = useSafeAreaInsets();
     /* 2. Get the param */
-    const { being, name, email } = route.params;
-    console.log(being);
+    const { being, name, email, msg } = route.params;
+    console.log("from ts", being, name, email, msg);
     return (
         <>
             <ScrollView>
-                {being === "register" ? (
+                {being == "register" ? (
                     <>
                         <ThanksTop
                             name={"Eric Brown"}
@@ -39,8 +40,22 @@ const ThankScreen = ({ navigation, route }) => {
                     </>
                 ) : being === "invite" ? (
                     <>
-                        <ThanksTop being={"invite"} />
+                        <ThanksTop being={being} />
                         <InviteBody name={name} email={email} />
+                    </>
+                ) : being === "obtain" ? (
+                    <>
+                        <ThanksTop
+                            being={being}
+                            name={"Eric Brown"}
+                            msg={"obtaining your visitor pass."}
+                        />
+                        <OrderDetails />
+                    </>
+                ) : being === "deleted" ? (
+                    <>
+                        <ThanksTop being={being} />
+                        <DeleteTop being={being} />
                     </>
                 ) : (
                     <>

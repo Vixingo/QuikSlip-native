@@ -144,6 +144,7 @@ const TenantReg = ({ tendata, setTendata }) => {
                 op={() => {
                     navigation.navigate("thankYou", {
                         being: "register",
+                        name: "Eric Brown",
                     });
                 }}
             />

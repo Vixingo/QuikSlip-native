@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Alert, ImageBackground } from "react-native";
 import { Button } from "react-native-paper";
 import CpButton from "../components/buttons/CpButton";
+import CSButton from "../components/buttons/CSButton";
 
 function HomeScreen({ navigation }) {
     return (
@@ -12,38 +13,39 @@ function HomeScreen({ navigation }) {
                 gap: 4,
                 paddingLeft: 20,
                 paddingRight: 20,
+                marginTop: 20,
             }}
         >
             <CpButton
-                label={"2A,Guest Pass"}
+                label={"2A - Guest parking flow"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("guestPass");
                 }}
             />
             <CpButton
-                label={"2B,Expired"}
+                label={"2B - Expired Link"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("expired");
                 }}
             />
             <CpButton
-                label={"2C,Tenant"}
+                label={"2C - Tenant Registering Vehicle"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("tenant");
                 }}
             />
             <CpButton
-                label={"3,Tenant Dashboard"}
+                label={"3 - Tenant Dashboard"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("tntDash");
                 }}
             />
             <CpButton
-                label={"4,Modify/Add Guest"}
+                label={"4A - Modify/Add Guest Flow"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("commonGuest", {
@@ -53,7 +55,7 @@ function HomeScreen({ navigation }) {
                 }}
             />
             <CpButton
-                label={"5,Modify/Add Car"}
+                label={"4B - Modify/Add Car Flow"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("commonGuest", {
@@ -63,12 +65,27 @@ function HomeScreen({ navigation }) {
                 }}
             />
             <CpButton
+                label={"4C - Tenant Account Settings"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("setting");
+                }}
+            />
+            <CpButton
                 label={"Thank You obtain"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("thankYou", { being: "obtain" });
                 }}
             />
+            <CpButton
+                label={"Thank You Register"}
+                mode="contained"
+                op={() => {
+                    navigation.navigate("thankYou", { being: "register" });
+                }}
+            />
+
             {/* <CpButton
                 label={"Modify Pass"}
                 mode="contained"
@@ -77,20 +94,20 @@ function HomeScreen({ navigation }) {
                 }}
             /> */}
 
-            <CpButton
-                label={"Login"}
-                mode="contained"
+            <CSButton
+                label={"Login (for Future)"}
+                mode="outlined"
                 op={() => {
                     navigation.navigate("login");
                 }}
             />
-            <CpButton
+            {/* <CpButton
                 label={"Overview"}
                 mode="contained"
                 op={() => {
                     navigation.navigate("overview");
                 }}
-            />
+            /> */}
 
             {/* <Button
                 title="Modify Pass"
