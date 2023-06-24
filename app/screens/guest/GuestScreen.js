@@ -93,7 +93,7 @@ const GuestScreen = ({ route }) => {
                         icon={show === "car" ? "car" : "account-plus"}
                         mode={"contained"}
                         op={() => {
-                            navigation.navigate("addGuest");
+                            navigation.navigate("addGuest", {});
                         }}
                     />
                 ) : modify ? (

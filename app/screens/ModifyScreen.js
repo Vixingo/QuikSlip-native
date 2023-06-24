@@ -14,6 +14,7 @@ function ModifyScreen({ route }) {
 
     const [user, setUser] = useState("Thom Hunt");
     const [user2, setUser2] = useState("Eric Brown");
+
     return (
         <ProfileLayout>
             <Heading2

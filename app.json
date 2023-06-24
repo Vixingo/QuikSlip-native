@@ -1,28 +1,44 @@
 {
-    "expo": {
-        "name": "quikslip",
-        "slug": "quikslip",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./app/assets/icon.png",
-        "userInterfaceStyle": "light",
-        "splash": {
-            "image": "./app/assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./app/assets/adaptive-icon.png",
-                "backgroundColor": "#ffffff"
-            }
-        },
-        "web": {
-            "favicon": "./app/assets/favicon.png"
-        }
+  "expo": {
+    "name": "quikslip",
+    "slug": "quikslip",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vixingo.quikslip",
+      "runtimeVersion": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "runtimeVersion": {
+        "policy": "sdkVersion"
+      },
+      "package": "com.vixingo.quikslip"
+    },
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e73d569e-ea88-4632-9cba-87031f28356f"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e73d569e-ea88-4632-9cba-87031f28356f"
     }
+  }
 }

@@ -19,7 +19,7 @@ const ModifyGuestScreen = ({ route }) => {
     const navigation = useNavigation();
     const [save, setSave] = useState(false);
     const [visible, setVisible] = React.useState(false);
-    const { title, subtitle, name } = route.params;
+    const { title, subtitle, model, plate } = route.params;
     const showDialog = () => setVisible(true);
 
     const hideDialog = () => setVisible(false);
@@ -30,7 +30,7 @@ const ModifyGuestScreen = ({ route }) => {
                 <CustomTextInput
                     label={"Name"}
                     icon={"rename-box"}
-                    value={name}
+                    value={model}
                 />
                 <CustomTextInput
                     label={"Email"}

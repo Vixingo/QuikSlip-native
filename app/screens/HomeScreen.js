@@ -50,7 +50,10 @@ function HomeScreen({ navigation }) {
                 op={() => {
                     navigation.navigate("commonGuest", {
                         show: "guest",
-                        title: "Guest",
+                        title: "Guest Profiles",
+                        subtitle:
+                            "Here you find all the guest profiles you created for ease of access to obtain a parking pass.",
+                        add: "Guest",
                     });
                 }}
             />
@@ -59,8 +62,11 @@ function HomeScreen({ navigation }) {
                 mode="contained"
                 op={() => {
                     navigation.navigate("commonGuest", {
-                        show: "car",
-                        title: "car",
+                        show: "guest",
+                        title: "Guest Profiles",
+                        subtitle:
+                            "Here you find all the guest profiles you created for ease of access to obtain a parking pass.",
+                        add: "Guest",
                     });
                 }}
             />
